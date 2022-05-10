@@ -1,3 +1,17 @@
+function sonarSweep(depthsStr){
+    
+    const depths = depthsStr.split('\n');
+    let count = 0;
+
+    for (let i = 1; i < depths.length; i++){
+        if (Number(depths[i]) > Number(depths[i-1])){
+            count ++
+        }
+    }
+    console.log(count)
+}
+
+
 const depthsString = 
 `189
 190
@@ -1999,20 +2013,5 @@ const depthsString =
 6627
 6629
 6624`;
-
-
-
-function sonarSweep(depthsStr){
-    
-    const depths = depthsStr.split('\n');
-    let count = 0;
-
-    for (let i = 1; i < depths.length; i++){
-        if (Number(depths[i]) > Number(depths[i-1])){
-            count ++
-        }
-    }
-    console.log(count)
-}
 
 sonarSweep(depthsString)
